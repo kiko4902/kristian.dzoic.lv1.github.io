@@ -1,0 +1,143 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+header {
+    background: blue;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    position: relative;
+}
+
+nav {
+    margin-top: 10px;
+    width: auto; 
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    position: absolute; 
+    left: 0; 
+    transition: width 0.3s ease; 
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    padding: 10px 20px;
+    text-align: center;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+}
+
+nav ul {
+    display: none; 
+}
+
+nav:hover ul {
+    display: block; 
+}
+
+nav ul {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+nav:hover ul {
+    opacity: 1;
+}
+
+.chart_name{
+    padding-top: 30px;
+}
+
+.content {
+    display: flex; 
+    justify-content: center; 
+    gap: 20px; 
+    padding: 40px;
+    background: white;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-left: 40px; 
+    width: 100%;
+}
+
+footer {
+    margin-top: 30px;
+    padding: 10px;
+    background: #222;
+    color: white;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .chart_name{
+        padding-top: 100px;
+    }
+
+    .content {
+        flex-direction: column;
+        gap: 10px;
+        margin: 45px;
+        margin-top: 0px;
+        padding: 0;
+    }
+    .pie-chart {
+        max-width: 300px;  
+        max-height: 300px;
+    }
+
+}
+
+.pie-chart {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: conic-gradient(
+        #3498db 0% 40%, 
+        #2ecc71 40% 75%, 
+        #f1c40f 75% 100% 
+    );
+    position: relative;
+    transition: transform 0.3s ease-in-out; 
+}
+
+.pie-chart {
+    animation: pieChartAnimation 1.5s ease-out forwards; 
+}
+
+.pie-chart:hover {
+    transform: scale(1.1); 
+    opacity: 0.7; 
+}
+
+.pie-chart:hover::after {
+    content: "Industrija: 40%, Kućanstva: 35%, Transport: 25%"; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7); 
+    padding: 10px;
+    border-radius: 5px;
+}
